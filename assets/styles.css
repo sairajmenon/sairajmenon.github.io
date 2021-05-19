@@ -232,6 +232,11 @@ li a {
     margin-bottom: 15px;
 }
 
+.forward-mail {
+    max-width: 360px;
+    word-break: break-word;
+}
+
 .add-acct-label {
     cursor: pointer;
 }
@@ -425,7 +430,7 @@ input:checked+.slider:before {
 }
 
 .note-text {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
 }
 

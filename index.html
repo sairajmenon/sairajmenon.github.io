@@ -12,12 +12,212 @@
 </head>
 
 <body>
-    <!-- Put HTML Here -->
-    
-    <!-- 
-        Font Awesome v5 Free - See https://fontawesome.com/start for more info
-        Example usage: <i class="fas fa-toggle-off"></i>
-     -->
+    <div class="wrapper">
+        <!-- Put HTML Here -->
+        <header class="header">
+            <nav class="top-nav regular-nav">
+                <section class="flex-container">
+                    <img src="assets/img/logo-relay.png" class="relay-logo">
+                    <section class="right-sec">
+                        <ul class="menu-list">
+                            <li><a href="#" class="active">Home</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li>
+                                <img src="assets/img/grid-menu.svg" class="app-list-icon">
+                            </li>
+                            <li>
+                                <div class="user-img"></div>
+                                <!--Could change div to image to link to user image-->
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+            </nav>
+            <nav class="top-nav mobile-nav">
+                <section class="flex-container">
+                    <img src="assets/img/logo-relay.png" class="relay-logo">
+                    <section class="right-sec">
+                        <ul class="menu-list">
+                            <li>
+                                <img src="assets/img/grid-menu.svg" class="app-list-icon">
+                            </li>
+                            <li>
+                                <div class="user-img"></div>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section class="mobile-menu-list">
+                    <button class="expansion-btn" onclick="toggleMenu()">
+                        Menu
+                        <i class="fas fa-angle-down drop-btn" id="menu-expand-btn"></i>
+                        <i class="fas fa-angle-up drop-btn hidden" id="menu-collapse-btn"></i>
+                    </button>
+                    <section class="drop-down-menu-list" id="drop-down-menu-list">
+                        <div class="expanded-item active">
+                            Home
+                        </div>
+                        <div class="expanded-item">
+                            FAQ
+                        </div>
+                    </section>
+                </section>
+            </nav>
+        </header>
+        <div class="body-container">
+            <article class="account-widget-container">
+                <section class="heading-section">
+                    <h3 class="alias-heading">
+                        Manage your Relay aliases
+                    </h3>
+                    <p class="alias-count">
+                        <b>4</b> remaining aliases
+                    </p>
+                </section>
+                <section class="create-new">
+                    <button class="primary-button generate-button">
+                        <i class="fa fa-plus"></i> &nbsp; Generate New Alias
+                    </button>
+                </section>
+                <p class="mobile-alias-count">
+                    <b>4</b> remaining aliases
+                </p>
+                <section class="forwarding-setting">
+                    <div class="fwd-left-col">
+                        <label class="add-acct-label">Add account name <i class="fa fa-pencil edit-acct-name"
+                                aria-hidden="true"></i></label>
+                    </div>
+                    <div class="fwd-right-col">
+                        <label>forwarding</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </section>
+                <article class="relay-mail-details">
+                    <section class="mail-heading-content">
+                        <div class="mail-left-col">
+                            <label class="email-label">sw4wo4v1s@relay.firefox.com &nbsp;
+                                <i class="fa fa-clone clone-email-icon" aria-hidden="true"></i>
+                            </label>
+                            <br />
+                            <label class="email-detail-expand value-part" onclick="toggleDetailsTab()">
+                                Show Details
+                                <i class="fas fa-angle-down drop-btn" id="email-expand-btn"></i>
+                                <i class="fas fa-angle-up drop-btn hidden" id="email-collapse-btn"></i>
+                            </label>
+                        </div>
+                        <div class="mail-right-col">
+                            <div class="blocked-stats">
+                                <label>
+                                    0
+                                </label>
+                                <br />
+                                <label>
+                                    Blocked
+                                </label>
+                            </div>
+                            <div class="forwarded-stats">
+                                <label>
+                                    0
+                                </label>
+                                <br />
+                                <label class="forwarded-text">
+                                    Forwarded
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="result-row" id="result-row">
+                        <section class="mail-expansion-content regular-view">
+                            <div class="mail-expanded-left-col">
+                                <div class="created-time-col">
+                                    <label class="created-label">
+                                        Created:
+                                    </label>
+                                    <br />
+                                    <label class="created-date value-part">
+                                        May 10, 2021
+                                    </label>
+                                </div>
+                                <div class="forward-email-col">
+                                    <label class="forward-label">
+                                        Forward emails to
+                                    </label>
+                                    <br />
+                                    <label class="forward-mail value-part">
+                                        mcrawford@mozilla.com
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mail-expanded-right-col">
+                                <button class="primary-button disabled-btn">
+                                    Delete
+                                </button>
+                        </section>
+                        <section class="mail-expansion-content block-box mobile-view">
+                            <div class="mail-mobile-container">
+                                <div class="mail-expanded-left-col">
+                                    <div class="created-time-col">
+                                        <label class="mail-content-mobile-label disabled-text">
+                                            Blocked
+                                        </label>
+                                        <br />
+                                        <label class="mail-content-mobile-label">
+                                            Forwarded
+                                        </label>
+                                        <br />
+                                        <label class="mail-content-mobile-label">
+                                            Created:
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mail-expanded-right-col">
+                                    <div class="created-time-col">
+                                        <label class="mail-content-mobile-result disabled-text">
+                                            0
+                                        </label>
+                                        <br />
+                                        <label class="mail-content-mobile-result">
+                                            0
+                                        </label>
+                                        <br />
+                                        <label class="mail-content-mobile-result">
+                                            May 10, 2021
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="primary-button disabled-btn delete-mobile-btn">
+                                Delete
+                            </button>
+                    </div>
+                    </section>
+                </article>
+            </article>
+            <p class="note-text font-inter">
+                Firefox Relay supports email forwarding (including attachments) of email up to 150KB in size
+            </p>
+        </div>
+    </div>
+    <footer class="footer">
+        <img src="assets/img/logo-mozilla.svg" class="mozilla-logo">
+        <nav class="bottom-nav">
+            <a class="footer-link" href="#">
+                Privacy
+            </a>
+            <a class="footer-link" href="#">
+                Relay Terms
+            </a>
+            <a class="footer-link" href="#">
+                Legal
+            </a>
+            <a class="footer-link git-hub-icon" href="#">
+                <i class="fab fa-github"></i>
+            </a>
+        </nav>
+    </footer>
     <script src="https://kit.fontawesome.com/4c55e184d1.js" crossorigin="anonymous"></script>
     <script src="assets/app.js"></script>
 </body>
